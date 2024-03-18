@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import './variable.scss';
+body {
+    font-family: "Quicksand", sans-serif;
+}
+
+.font-poppins {
+    font-family: "Poppins", sans-serif;
+    ;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.cardIntro {
+    width: 200px;
+    height: 240px;
+    background-color: #a8cbeb;
+    border-radius: 12px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 32px;
+    padding-left: 16px;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    display: flex;
+    box-shadow: 0 12px 40px rgba(168, 203, 235, 0.4);
+}
+
+.navigation{
+    background-color: white;
+}
+.navigationActive {
+    background-color: #f3f3f3;
+}
+.navigation:hover{
+    background-color: #f3f3f3;
+    cursor: pointer;
+}
+.activeNav{
+        font-weight: 600;
+        color: var(--qfw-lilac);    
+}
+
+
