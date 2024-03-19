@@ -1,9 +1,9 @@
 "use client";
 import { notFound, useParams, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+
 import GoogleIcon from "@/components/icons/GoogleIcon";
-import { ArrowBack, EmailOutlined, Token } from "@mui/icons-material";
+
 import FacebookIcons from "@/components/icons/FacebookIcons";
 import MicrosoftIcon from "@/components/icons/MicrosoftIcon";
 import AppleIcon from "@/components/icons/AppleIcon";
@@ -15,6 +15,8 @@ import { signIn } from "next-auth/react";
 import { IoArrowBack } from "react-icons/io5";
 
 import FormLoginEmail from "@/components/FormLoginEmail";
+import { ArrowRightOutlined } from "@ant-design/icons";
+import { MdEmail } from "react-icons/md";
 
 type Props = {};
 
@@ -41,7 +43,7 @@ export default function Auth({}: Props) {
           <div className="h-12 w-full bg-medium-violet-red shadow-lg absolute top-0 flex items-center justify-end">
             <Link href={"/"}>
               <button className="fixed left-2 top-2 py-1 px-2 font-[600] text-white bg-[#5D2056] rounded-[4px] h-8 mr-4 transition-transform duration-300 ease-in-out transform hover:scale-110">
-                <ArrowBack fontSize="medium" />
+                <IoArrowBack fontSize="medium" />
               </button>
             </Link>
 
@@ -85,21 +87,21 @@ export default function Auth({}: Props) {
                   >
                     <GoogleIcon height={20} width={20} />
                     <span className="text-md"> Tiếp tục với google</span>
-                    <ArrowForwardIcon className="text-gray-400 text-md w-[10%] absolute right-1" />
+                    <ArrowRightOutlined className="text-gray-400 text-md w-[10%] absolute right-1" />
                   </button>
 
                   <button
                     onClick={handleLoginWithForm}
                     className="flex justify-start items-center py-2 px-4 w-full relative border-[1px] border-gray-300 rounded-md gap-2 hover:shadow-md"
                   >
-                    <EmailOutlined style={{ width: 20, height: 20 }} />
+                    <MdEmail style={{ width: 20, height: 20 }} />
                     <span>Tiếp tục với email</span>
-                    <ArrowForwardIcon className="text-gray-400 text-md w-[10%] absolute right-1" />
+                    <ArrowRightOutlined className="text-gray-400 text-md w-[10%] absolute right-1" />
                   </button>
                   <button className="flex justify-start items-center py-2 px-4 w-full relative border-[1px] border-gray-300 rounded-md gap-2 hover:shadow-md">
                     <FacebookIcons width={20} height={20} />
                     <span>Tiếp tục với facebook</span>
-                    <ArrowForwardIcon className="text-gray-400 text-md w-[10%] absolute right-1" />
+                    <ArrowRightOutlined className="text-gray-400 text-md w-[10%] absolute right-1" />
                   </button>
                 </div>
               )}

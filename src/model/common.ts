@@ -14,3 +14,4 @@ export interface SelectSearchComponentProps {
     apiName? : string,
     action? : any,
 }
+export type ProgressDownLoadAndUploadFileStatus = "success" | "exception" | "normal" | "active"
