@@ -13,8 +13,7 @@ export default function UploadFileForm({}: Props) {
   const [progressStatus, setProgressStatus] =
     useState<ProgressDownLoadAndUploadFileStatus>("active");
 
-  const [fileNameUploaded , setFileNameuploaded] = useState(undefined)
- 
+  const [fileNameUploaded, setFileNameuploaded] = useState(undefined);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -39,7 +38,6 @@ export default function UploadFileForm({}: Props) {
   const handleFiles = async (files: any) => {
     // Handle dropped files here
     if (files && files[0]) {
-      
       let fileName = files[0]?.name;
       let fileSize = files[0]?.size;
       setFileName(fileName);
@@ -48,9 +46,9 @@ export default function UploadFileForm({}: Props) {
         setProgressStatus("active");
         const res = await api.uploadFile(files[0], onUploadProgress);
         setProgressStatus("success");
-       
-        let fileNameUploaded = res.data?.metaData?.fileName
-        setFileNameuploaded(fileNameUploaded)
+
+        let fileNameUploaded = res.data?.metaData?.fileName;
+        setFileNameuploaded(fileNameUploaded);
       } catch (error) {
         setProgressStatus("exception");
         return;
@@ -60,7 +58,7 @@ export default function UploadFileForm({}: Props) {
 
   const onUploadProgress = (event: AxiosProgressEvent) => {
     let percent = event.progress || 0;
-    
+
     setPercentUpload(parseFloat((percent * 100).toFixed(2))); // Rounded to two decimal places
   };
 

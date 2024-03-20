@@ -17,17 +17,21 @@ const formView = [
   },
   {
     id: 2,
-    formName: "Detail",
+    formName: "ThumnailDocument",
   },
   {
     id: 3,
+    formName: "Detail",
+  },
+  {
+    id: 4,
     formName: "Done",
   },
 ];
 
 export default function FormUploadDocument({}: Props) {
   // step for form upload
-  const [step, setStep] = useState<number>(1);
+  const [step, setStep] = useState<number>(2);
   const [formName, setFormName] = useState<string>("Upload");
   const handleIncreaseStep = () => {
     setStep((prev) => prev + 1);
